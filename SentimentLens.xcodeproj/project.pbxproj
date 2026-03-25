@@ -6,17 +6,38 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B24342C42F74621200F1B4B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24342BF2F74621200F1B4B5 /* Assets.xcassets */; };
+		B24342C52F74621200F1B4B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342C02F74621200F1B4B5 /* ContentView.swift */; };
+		B24342C62F74621200F1B4B5 /* SentimentLensApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342C12F74621200F1B4B5 /* SentimentLensApp.swift */; };
+		B24342C72F74621200F1B4B5 /* socialMediaClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B24342C22F74621200F1B4B5 /* socialMediaClassifierModel.mlmodel */; };
+		B24342CB2F74627800F1B4B5 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342CA2F74627800F1B4B5 /* Review.swift */; };
+		B24342CD2F74629900F1B4B5 /* SentimentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342CC2F74629900F1B4B5 /* SentimentResult.swift */; };
+		B24342CF2F7462BD00F1B4B5 /* SentimentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342CE2F7462BD00F1B4B5 /* SentimentViewModel.swift */; };
+		B24342D22F7462EC00F1B4B5 /* SentimentEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342D12F7462EC00F1B4B5 /* SentimentEmojiView.swift */; };
+		B24342D42F74632900F1B4B5 /* SentimentBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342D32F74632900F1B4B5 /* SentimentBarView.swift */; };
+		B24342D72F74634D00F1B4B5 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342D62F74634D00F1B4B5 /* CSVParser.swift */; };
+		B24342D92F74636300F1B4B5 /* SentimentAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342D82F74636300F1B4B5 /* SentimentAnalyzer.swift */; };
+		B24342DC2F74639100F1B4B5 /* socialMediaReviews.csv in Resources */ = {isa = PBXBuildFile; fileRef = B24342DB2F74639100F1B4B5 /* socialMediaReviews.csv */; };
+		B24342DF2F7463B900F1B4B5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24342DE2F7463B900F1B4B5 /* String+Extensions.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		B24342AF2F7460FA00F1B4B5 /* SentimentLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentimentLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B24342BF2F74621200F1B4B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B24342C02F74621200F1B4B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B24342C12F74621200F1B4B5 /* SentimentLensApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentLensApp.swift; sourceTree = "<group>"; };
+		B24342C22F74621200F1B4B5 /* socialMediaClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = socialMediaClassifierModel.mlmodel; sourceTree = "<group>"; };
+		B24342CA2F74627800F1B4B5 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		B24342CC2F74629900F1B4B5 /* SentimentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentResult.swift; sourceTree = "<group>"; };
+		B24342CE2F7462BD00F1B4B5 /* SentimentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentViewModel.swift; sourceTree = "<group>"; };
+		B24342D12F7462EC00F1B4B5 /* SentimentEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentEmojiView.swift; sourceTree = "<group>"; };
+		B24342D32F74632900F1B4B5 /* SentimentBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentBarView.swift; sourceTree = "<group>"; };
+		B24342D62F74634D00F1B4B5 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
+		B24342D82F74636300F1B4B5 /* SentimentAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentAnalyzer.swift; sourceTree = "<group>"; };
+		B24342DB2F74639100F1B4B5 /* socialMediaReviews.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = socialMediaReviews.csv; sourceTree = "<group>"; };
+		B24342DE2F7463B900F1B4B5 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		B24342B12F7460FA00F1B4B5 /* SentimentLens */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SentimentLens;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B24342AC2F7460FA00F1B4B5 /* Frameworks */ = {
@@ -32,7 +53,7 @@
 		B24342A62F7460FA00F1B4B5 = {
 			isa = PBXGroup;
 			children = (
-				B24342B12F7460FA00F1B4B5 /* SentimentLens */,
+				B24342C32F74621200F1B4B5 /* SentimentLens */,
 				B24342B02F7460FA00F1B4B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +64,74 @@
 				B24342AF2F7460FA00F1B4B5 /* SentimentLens.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B24342C32F74621200F1B4B5 /* SentimentLens */ = {
+			isa = PBXGroup;
+			children = (
+				B24342DD2F7463A300F1B4B5 /* Extensions */,
+				B24342DA2F74637D00F1B4B5 /* Resources */,
+				B24342D52F74633500F1B4B5 /* Services */,
+				B24342D02F7462C500F1B4B5 /* Views */,
+				B24342C92F74624600F1B4B5 /* ViewModels */,
+				B24342C82F74622000F1B4B5 /* Models */,
+				B24342BF2F74621200F1B4B5 /* Assets.xcassets */,
+				B24342C12F74621200F1B4B5 /* SentimentLensApp.swift */,
+			);
+			path = SentimentLens;
+			sourceTree = "<group>";
+		};
+		B24342C82F74622000F1B4B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B24342C22F74621200F1B4B5 /* socialMediaClassifierModel.mlmodel */,
+				B24342CA2F74627800F1B4B5 /* Review.swift */,
+				B24342CC2F74629900F1B4B5 /* SentimentResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B24342C92F74624600F1B4B5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B24342CE2F7462BD00F1B4B5 /* SentimentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B24342D02F7462C500F1B4B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B24342C02F74621200F1B4B5 /* ContentView.swift */,
+				B24342D12F7462EC00F1B4B5 /* SentimentEmojiView.swift */,
+				B24342D32F74632900F1B4B5 /* SentimentBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B24342D52F74633500F1B4B5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B24342D62F74634D00F1B4B5 /* CSVParser.swift */,
+				B24342D82F74636300F1B4B5 /* SentimentAnalyzer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B24342DA2F74637D00F1B4B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B24342DB2F74639100F1B4B5 /* socialMediaReviews.csv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B24342DD2F7463A300F1B4B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B24342DE2F7463B900F1B4B5 /* String+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +148,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				B24342B12F7460FA00F1B4B5 /* SentimentLens */,
 			);
 			name = SentimentLens;
 			packageProductDependencies = (
@@ -109,6 +195,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24342DC2F74639100F1B4B5 /* socialMediaReviews.csv in Resources */,
+				B24342C42F74621200F1B4B5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +207,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24342D42F74632900F1B4B5 /* SentimentBarView.swift in Sources */,
+				B24342DF2F7463B900F1B4B5 /* String+Extensions.swift in Sources */,
+				B24342C52F74621200F1B4B5 /* ContentView.swift in Sources */,
+				B24342D72F74634D00F1B4B5 /* CSVParser.swift in Sources */,
+				B24342CB2F74627800F1B4B5 /* Review.swift in Sources */,
+				B24342CF2F7462BD00F1B4B5 /* SentimentViewModel.swift in Sources */,
+				B24342C62F74621200F1B4B5 /* SentimentLensApp.swift in Sources */,
+				B24342CD2F74629900F1B4B5 /* SentimentResult.swift in Sources */,
+				B24342D22F7462EC00F1B4B5 /* SentimentEmojiView.swift in Sources */,
+				B24342C72F74621200F1B4B5 /* socialMediaClassifierModel.mlmodel in Sources */,
+				B24342D92F74636300F1B4B5 /* SentimentAnalyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
