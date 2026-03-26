@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Review: Identifiable {
+    
+    let id = UUID()
+    let text: String
+    let label: String
+    
+}
