@@ -6,7 +6,7 @@
 ![CoreML](https://img.shields.io/badge/Machine_Learning-CoreML-purple.svg)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 
-**SentimentLens** is a modern iOS application that performs real-time sentiment analysis on social media text using on-device machine learning. By simply typing a `@mention` or `#hashtag`, users can instantly visualize the overarching emotional tone—positive, negative, or neutral—drawn from a localized dataset of Brazilian Portuguese social media reviews. 
+**SentimentLens** is a modern iOS application that performs real-time sentiment analysis on social media text using on-device machine learning. By simply typing a `@mention` or `#hashtag`, users can instantly visualize the overarching emotional tone—positive, negative, or neutral—drawn from a localized dataset of Brazilian Portuguese social media reviews.
 
 Built with the latest Apple technologies, this project demonstrates a strong integration of **CoreML**, **SwiftUI**, and modern **MVVM architecture**.
 
@@ -14,7 +14,7 @@ Built with the latest Apple technologies, this project demonstrates a strong int
 
 ## 📸 Previews
 
-|<img src="https://github.com/user-attachments/assets/67ad682a-1795-4cf8-9938-a259e722723a" width="250" alt="Light Mode UI"/> | <img src="https://github.com/user-attachments/assets/74425163-5409-423c-9916-a0aacf68f405" width="250" alt="Dark Mode UI"/> |
+| <img src="https://github.com/user-attachments/assets/67ad682a-1795-4cf8-9938-a259e722723a" width="250" alt="Light Mode UI"/> | <img src="https://github.com/user-attachments/assets/74425163-5409-423c-9916-a0aacf68f405" width="250" alt="Dark Mode UI"/> |
 |:---:|:---:|
 | **Light Mode** | **Dark Mode** |
 
@@ -40,10 +40,12 @@ Built with the latest Apple technologies, this project demonstrates a strong int
 5. **Visualization:** The UI immediately reflects the aggregated sentiment via dynamic emoji representations and a statistical summary.
 
 ### Sentiment Detection Logic
+
 To prevent edge cases where a sentiment "wins" by a negligible margin in a large dataset, SentimentLens employs a custom threshold system:
-* **Baseline:** Equal distribution across 3 sentiments = 33.33%
-* **Dominance Threshold:** 33.33% + 5% buffer = **38.33%**
-* *Outcome:* If a sentiment exceeds 38.33% of the total, it is declared the dominant tone. If none cross the threshold, the result is intelligently classified as "Mixed".
+
+- **Baseline:** Equal distribution across 3 sentiments = 33.33%
+- **Dominance Threshold:** 33.33% + 5% buffer = **38.33%**
+- **Outcome:** If a sentiment exceeds 38.33% of the total, it is declared the dominant tone. If none cross the threshold, the result is intelligently classified as "Mixed".
 
 ---
 
@@ -54,15 +56,79 @@ The app strictly follows the **MVVM (Model-View-ViewModel)** design pattern, lev
 ```text
 SentimentLens/
 ├── Models/
-│   ├── Review.swift                      # Data representation of a single review
-│   ├── SentimentResult.swift             # Enums and analysis result structures
+│   ├── Review.swift                       # Data representation of a single review
+│   ├── SentimentResult.swift              # Enums and analysis result structures
 │   └── socialMediaClassifierModel.mlmodel # CoreML text classifier
 ├── ViewModels/
-│   └── SentimentViewModel.swift          # Reactive business logic and data binding
+│   └── SentimentViewModel.swift           # Reactive business logic and data binding
 ├── Views/
-│   └── ContentView.swift                 # Main interface featuring glassmorphic cards
+│   └── ContentView.swift                  # Main interface featuring glassmorphic cards
 ├── Services/
-│   ├── CSVParser.swift                   # Robust, quote-aware CSV reader
-│   └── SentimentAnalyzer.swift           # CoreML model wrapper and evaluation logic
+│   ├── CSVParser.swift                    # Robust, quote-aware CSV reader
+│   └── SentimentAnalyzer.swift            # CoreML model wrapper and evaluation logic
 └── Resources/
-    └── socialMediaReviews.csv            # 1,050-row Brazilian Portuguese dataset
+    └── socialMediaReviews.csv             # 1,050-row Brazilian Portuguese dataset
+```
+
+---
+
+## 🛠 Tech Stack & Requirements
+
+| Category | Technology |
+|:---|:---|
+| **UI Framework** | SwiftUI |
+| **Machine Learning** | CoreML, Natural Language |
+| **State Management** | `@Observable` (Observation framework) |
+| **Assets** | SF Symbols |
+| **Deployment Target** | iOS 18.0+ |
+| **Development Environment** | Xcode 16+, Swift 5.9+ |
+
+---
+
+## 💻 Getting Started
+
+This project is fully self-contained with no third-party dependencies. Follow these steps to run it locally:
+
+**1.** Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/cemakkaya-dev/SentimentLens-SwiftUI.git
+```
+
+**2.** Navigate into the project directory:
+
+```bash
+cd SentimentLens-SwiftUI
+```
+
+**3.** Open the project in Xcode:
+
+```bash
+open SentimentLens.xcodeproj
+```
+
+**4.** Select a simulator or physical device running **iOS 18.0+** and hit Run (`Cmd` + `R`).
+
+> **Note:** No external packages or dependencies are required — everything runs entirely on-device.
+
+---
+
+## 📊 Dataset Context
+
+The embedded dataset consists of **1,050 Brazilian Portuguese** social media reviews specifically focused on food delivery services. It encompasses a realistic mix of positive, negative, and neutral sentiments, heavily featuring brand `@mentions` and topical `#hashtags` to accurately simulate real-world social media scraping.
+
+---
+
+## 👨‍💻 Developer
+
+**Cem Akkaya**
+
+[![GitHub](https://img.shields.io/badge/GitHub-cemakkaya--dev-181717?logo=github)](https://github.com/cemakkaya-dev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin)](https://linkedin.com/in/cemakkaya-dev/)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?logo=gmail)](mailto:cemakkaya1312@gmail.com)
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
