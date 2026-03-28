@@ -43,11 +43,17 @@ struct ContentView: View {
                 VStack {
                     Text(emojiText)
                         .font(.system(size: 120))
+                        .contentTransition(.symbolEffect(.replace))
+                        .animation(.easeInOut(duration: 0.5), value: emojiText)
                     
                     
                     if let result = viewModel.sentimentResult {
                         Text("\(result.totalReviewNumber) reviews analyzed")
                         Text("Overall sentiment: \(result.dominantEmotion.rawValue)")
+                    } else {
+                        Text("Type a @mention or #hashtag to analyze sentiment")
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 40)
                     }
                 }
                 .padding(30)
@@ -55,7 +61,11 @@ struct ContentView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 VStack {
-                    TextField("Search @mention or #hashtag...", text: $viewModel.searchText)
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundStyle(.black.opacity(0.7))
+                        TextField("Search @mention or #hashtag...", text: $viewModel.searchText)
+                    }
                 }
                 .padding(15)
                 .background(.ultraThinMaterial)
