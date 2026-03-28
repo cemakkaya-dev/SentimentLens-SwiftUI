@@ -8,14 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+    
+    @State private var viewModel = SentimentViewModel()
+    
+    var emojiText: String {
+        let emoji = viewModel.sentimentResult?.dominantEmotion
+        
+        switch emoji {
+        case nil:
+            return "❓"
+        case .positive:
+            return "😊"
+        case .negative:
+            return "😢"
+        case .neutral:
+            return "😐"
+        default:
+            return "🤔"
         }
-        .padding()
+    }
+    
+    var body: some View {
+
+        VStack {
+            Text(emojiText)
+                .font(.system(size: 120))
+            
+            if let result = viewModel.sentimentResult {
+                Text("\(result.totalReviewNumber) reviews analyzed")
+                Text("Overall sentiment: \(result.dominantEmotion)")
+            }
+            TextField("Search @mention or #hashtag...", text: $viewModel.searchText)
+        }
     }
 }
 
