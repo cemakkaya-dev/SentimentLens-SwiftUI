@@ -29,23 +29,44 @@ struct ContentView: View {
     }
     
     var body: some View {
-
-        VStack {
-            Text(emojiText)
-                .font(.system(size: 120))
+        
+        ZStack {
+            LinearGradient(
+                colors: [Color(red: 7.0, green: 0.4, blue: 0.2),
+                         Color(red: 0.0, green: 0.15, blue: 0.2)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
             
-            if let result = viewModel.sentimentResult {
-                Text("\(result.totalReviewNumber) reviews analyzed")
-                Text("Overall sentiment: \(result.dominantEmotion.rawValue)")
+            VStack(spacing: 30) {
+                VStack {
+                    Text(emojiText)
+                        .font(.system(size: 120))
+                    
+                    
+                    if let result = viewModel.sentimentResult {
+                        Text("\(result.totalReviewNumber) reviews analyzed")
+                        Text("Overall sentiment: \(result.dominantEmotion.rawValue)")
+                    }
+                }
+                .padding(30)
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                
+                VStack {
+                    TextField("Search @mention or #hashtag...", text: $viewModel.searchText)
+                }
+                .padding(15)
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
             }
-            
-            TextField("Search @mention or #hashtag...", text: $viewModel.searchText)
-        }
-        .onAppear {
-            viewModel.loadReviews()
-        }
-        .onChange(of: viewModel.searchText) { oldValue, newValue in
-            viewModel.analyze()
+            .onAppear {
+                viewModel.loadReviews()
+            }
+            .onChange(of: viewModel.searchText) { oldValue, newValue in
+                viewModel.analyze()
+            }
         }
     }
 }

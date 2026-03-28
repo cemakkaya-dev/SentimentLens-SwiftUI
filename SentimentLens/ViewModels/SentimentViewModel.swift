@@ -34,9 +34,10 @@ class SentimentViewModel {
         let counts = sentimentAnalyzer.analyzeBatch(texts: stringReviews)
         
         let total = Double(filteredReviews.count)
-        var positiveRatio = (Double(counts.positive) / total) * 100
-        var negativeRatio = (Double(counts.negative) / total) * 100
-        var neutralRatio = (Double(counts.neutral) / total) * 100
+        
+        let positiveRatio = (Double(counts.positive) / total) * 100
+        let negativeRatio = (Double(counts.negative) / total) * 100
+        let neutralRatio = (Double(counts.neutral) / total) * 100
         
         let dominant: SentimentResult.Sentiment
         
