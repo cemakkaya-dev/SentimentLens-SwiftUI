@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var viewModel = SentimentViewModel()
+    @Environment(\.colorScheme) var colorScheme
     
     var emojiText: String {
         let emoji = viewModel.sentimentResult?.dominantEmotion
@@ -32,10 +33,11 @@ struct ContentView: View {
         
         ZStack {
             LinearGradient(
-                colors: [Color(red: 7.0, green: 0.4, blue: 0.2),
-                         Color(red: 0.0, green: 0.15, blue: 0.2)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
+                colors: colorScheme == .dark
+                        ? [Color(red: 7.0, green: 0.4, blue: 0.2), Color(red: 0.0, green: 0.15, blue: 0.2)]
+                        : [Color(red: 1.0, green: 0.85, blue: 0.7), Color(red: 0.7, green: 0.9, blue: 0.95)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
             
@@ -63,7 +65,7 @@ struct ContentView: View {
                 VStack {
                     HStack {
                         Image(systemName: "magnifyingglass")
-                            .foregroundStyle(.black.opacity(0.7))
+                            .foregroundStyle(.primary.opacity(0.7))
                         TextField("Search @mention or #hashtag...", text: $viewModel.searchText)
                     }
                 }
