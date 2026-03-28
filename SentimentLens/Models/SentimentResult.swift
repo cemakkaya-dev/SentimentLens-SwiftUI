@@ -16,11 +16,11 @@ struct SentimentResult {
     let neutral: Int
     let dominantEmotion: Sentiment
     
-    enum Sentiment {
-        case positive
-        case negative
-        case neutral
-        case mixed
+    enum Sentiment: String {
+        case positive = "Positive 😊"
+        case negative = "Negative 😢"
+        case neutral = "Neutral 😐"
+        case mixed = "Mixed 🤔"
     }
     
 }

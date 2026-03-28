@@ -36,9 +36,16 @@ struct ContentView: View {
             
             if let result = viewModel.sentimentResult {
                 Text("\(result.totalReviewNumber) reviews analyzed")
-                Text("Overall sentiment: \(result.dominantEmotion)")
+                Text("Overall sentiment: \(result.dominantEmotion.rawValue)")
             }
+            
             TextField("Search @mention or #hashtag...", text: $viewModel.searchText)
+        }
+        .onAppear {
+            viewModel.loadReviews()
+        }
+        .onChange(of: viewModel.searchText) { oldValue, newValue in
+            viewModel.analyze()
         }
     }
 }
